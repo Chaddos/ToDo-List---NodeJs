@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1(style="font-family:calibri;font-style:italic;background-color:#4DD380;border-radius:10px;width:175px;") T$ D$-List
+    
+    form(method="POST", action="todo/add")
+        input(type = "text",placeholder="Add New Todo", name="task")
+        br
+        br
+        button.btn.btn-primary(type="submit") Submit
+    ul(style="list-style:none;width:130px;border-radius:10px;")
+    
+        each data2 in data 
+            li= data2
+    
+                span  &nbsp; 
+                    a(href="/todo/delete/"+index+"" style="float:right;")
+                     img(src="https://www.clker.com/cliparts/a/6/e/8/119498563188281957tasto_8_architetto_franc_01.svg.hi.png" width="10px;" height="10px;" style="float:right;")
